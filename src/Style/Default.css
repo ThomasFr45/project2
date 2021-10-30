@@ -1,0 +1,96 @@
+/* Navbar CSS */
+
+nav {
+  margin-top: 0;
+  background-color: #dd6802;
+  border-bottom: 2px solid;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+}
+
+nav li {
+  list-style: none;
+  align-self: center;
+  color: black;
+}
+
+nav img {
+  height: 50px;
+  width: 50px;
+}
+
+a:link {
+  text-decoration: none;
+}
+a:hover {
+  color: blue;
+}
+a {
+  color:black;
+}
+
+/* End Navbar CSS */
+
+
+
+/* Banniere CSS */
+
+.banniere {
+  background: linear-gradient(#dd3535, #f8943d);
+  height: 250px;
+  margin: 0px;
+}
+
+.banniere-h1 {
+  margin-top: 0px;
+  padding-top: 90px;
+}
+
+/* End of Banniere CSS */
+
+
+/* Footer CSS */
+
+footer {
+  background: linear-gradient(#e97a19, #dd3535);
+  padding-top: 0.3em;
+  padding-left: 1.2em;
+  position: absolute;
+  bottom: -1;
+  left: 0;
+  right: 0;
+}
+
+@media (min-width: 700px) {
+  footer {
+    padding: 0.3em;
+  }
+}
+
+.text-footer {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.6em;
+  color: white;
+  padding-bottom: 1em;
+}
+
+@media (min-width: 700px) {
+  .text-footer {
+    font-size: 0.9em;
+  }
+}
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem;
+  min-height: 100vh;    /* Footer height */
+}
