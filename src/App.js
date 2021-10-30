@@ -16,6 +16,7 @@ const App = () => {
   const [isLoaded, setIsLoaded] = React.useState(false)
   const [data, setData] = React.useState([])
   const [favoris, setFavoris] = React.useState([]);
+  const [drinks, setDrinks] = React.useState([]);
 
   useEffect(() => {
     const url =
@@ -27,6 +28,7 @@ const App = () => {
     const whisky = []
     const rhum = []
     const rest = []
+    const allDrinks = []
     fetch(url).then(response =>
       response.json().then(data =>
         data.drinks.map(item =>
@@ -48,8 +50,10 @@ const App = () => {
               } else {
                 rest.push(drink)
               }
-              setData([vodka, gin, whisky, rhum, rest])
-              setIsLoaded(true)
+              allDrinks.push(drink)
+              setDrinks(allDrinks);
+              setData([vodka, gin, whisky, rhum, rest]);
+              setIsLoaded(true);
             })
           )
         )
@@ -72,7 +76,7 @@ const App = () => {
               <Favoris favoris={favoris}/>
             </Route>
             <Route exact path='/Recherche'>
-              <Recherche />
+              <Recherche drinks={drinks} favoris={favoris} setFavoris={setFavoris}/>
             </Route>
             <Route exact path='/Contact'>
               <Contact />

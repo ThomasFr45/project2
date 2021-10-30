@@ -1,12 +1,13 @@
 import Banniere from '../Banniere';
 import Footer from '../Footer';
+import Search from './Search';
 
-const Recherche = () => {
+const Recherche = ({ drinks, favoris, setFavoris }) => {
   return(
     <div className='page-container'>
       <div className='content-wrap'>
         <Banniere title="Une envie particulière?"/>
-        <p>Search Here</p>
+        <Search drinks={drinks} favoris={favoris} setFavoris={setFavoris}/>
       </div>
       <Footer />
     </div>
