@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Ingredients = ({ data }) => {
   const ingredients = []
@@ -45,7 +46,7 @@ const Details = () => {
   const [data, setData] = useState([])
   useEffect(() => {
     fetch(
-      `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`
+      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink}`
     ).then(response =>
       response.json().then(data => setData(Object.values(data.drinks[0])))
     )
@@ -61,7 +62,7 @@ const Details = () => {
         <img src={data[16]} alt="" />
       </div>
       <div className='details-comp'>
-        <Ingredients data={data} />
+        <Ingredients ingredient={data} />
         <Dosage data={data} />
       </div>
       <div className='details-text'>
@@ -73,5 +74,29 @@ const Details = () => {
     </div>
   )
 }
+
+Details.propTypes = {
+  data: PropTypes.array,
+};
+
+Details.defaultProps = {
+  data: [],
+};
+
+Ingredients.propTypes = {
+  data: PropTypes.array,
+};
+
+Ingredients.defaultProps = {
+  data: [],
+};
+
+Dosage.propTypes = {
+  data: PropTypes.array,
+};
+
+Dosage.defaultProps = {
+  data: [],
+};
 
 export default Details

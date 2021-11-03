@@ -2,6 +2,7 @@ import Categories from './Categories.jsx';
 import Random from './Random.jsx';
 import Banniere from '../Banniere.jsx';
 import Footer from '../Footer.jsx';
+import PropTypes from 'prop-types'
 const Home = ({ data, favoris, setFavoris  }) => {
   const alcool = ['Vodka', 'Gin', 'Whisky', 'Rhum', 'Autre']
   return (
@@ -19,5 +20,16 @@ const Home = ({ data, favoris, setFavoris  }) => {
     </div>
   )
 }
+
+Home.propTypes = {
+  data: PropTypes.array,
+  favoris: PropTypes.array,
+  setFavoris: PropTypes.object,
+};
+
+Home.defaultProps = {
+  data: [],
+  favoris: PropTypes.array,
+};
 
 export default Home

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Item from './Item.jsx';
+import PropTypes from 'prop-types';
 
 const Categories = (props) => {
   const [index, setIndex] = useState(0);
@@ -36,6 +37,19 @@ const Categories = (props) => {
       </div>
     </div>
   );
+};
+
+Categories.propTypes = {
+  title: PropTypes.string,
+  item: PropTypes.array,
+  favoris: PropTypes.array,
+  setFavoris: PropTypes.object,
+};
+
+Categories.defaultProps = {
+  title: 'title',
+  item: [],
+  favoris: [],
 };
 
 export default Categories;

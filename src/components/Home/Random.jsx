@@ -1,26 +1,27 @@
 import React, { useState } from 'react';
 import Item from './Item.jsx';
+import PropTypes from 'prop-types';
 
-const Random = (props) => {
-  const [item, setItem] = useState('Plop');
+const Random = ({ item, favoris, setFavoris }) => {
+  const [obj, setObj] = useState('Plop');
   const [buttonText, setButtonText] = useState('Cocktail aléatoire');
 
   const getRandom = () => {
-    setItem(Math.floor(Math.random() * props.item[0].length));
+    setObj(Math.floor(Math.random() * item[0].length));
     setButtonText('Encore !');
   };
-  console.log(props.item[0])
+  console.log(item[0])
   return (
     <div className="random-div">
       <div className="random-item">
-        {item !== 'Plop' ? (
+        {obj !== 'Plop' ? (
           <Item
-            name={props.item[1][item][1]}
-            img={props.item[1][item][16]}
-            desc={props.item[1][item][9]}
-            id={props.item[1][item][0]}
-            favoris={props.favoris}
-            setFavoris={props.setFavoris}
+            name={item[1][obj][1]}
+            img={item[1][obj][16]}
+            desc={item[1][obj][9]}
+            id={item[1][obj][0]}
+            favoris={favoris}
+            setFavoris={setFavoris}
           />
         ) : (
           <p>Vous vous sentez chanceux ? Clickez ici !</p>
@@ -31,6 +32,17 @@ const Random = (props) => {
       </div>
     </div>
   );
+};
+
+Random.propTypes = {
+  item: PropTypes.array,
+  favoris: PropTypes.array,
+  setFavoris: PropTypes.object,
+};
+
+Random.defaultProps = {
+  item: [],
+  favoris: PropTypes.array,
 };
 
 export default Random;

@@ -12,7 +12,7 @@ const Navbar = () => {
           <Link to="/Favoris">Favoris</Link>
         </li>
         <li>
-          <img src="" alt="" />
+          <img src="https://i.imgur.com/ivFXOin.png" alt="" />
         </li>
         <li>
           <Link to="/Recherche">Recherche</Link>

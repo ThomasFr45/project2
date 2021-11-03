@@ -1,6 +1,7 @@
 import Banniere from '../Banniere';
 import Footer from '../Footer';
 import FavList from './FavList';
+import PropTypes from 'prop-types'
 
 const Favoris = ({ favoris }) => {
   return (
@@ -13,5 +14,13 @@ const Favoris = ({ favoris }) => {
     </div>
   )
 }
+
+Favoris.propTypes = {
+  favoris: PropTypes.array,
+};
+
+Favoris.defaultProps = {
+  favoris: [],
+};
 
 export default Favoris;

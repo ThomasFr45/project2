@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Banniere = ({title}) => {
   return (
@@ -10,4 +11,11 @@ const Banniere = ({title}) => {
   );
 };
 
+Banniere.propTypes = {
+  title: PropTypes.string,
+};
+
+Banniere.defaultProps = {
+  title: 'title',
+};
 export default Banniere;

@@ -1,6 +1,7 @@
 import Banniere from '../Banniere';
 import Footer from '../Footer';
 import Search from './Search';
+import PropTypes from 'prop-types';
 
 const Recherche = ({ drinks, favoris, setFavoris }) => {
   return(
@@ -13,5 +14,14 @@ const Recherche = ({ drinks, favoris, setFavoris }) => {
     </div>
   )
 }
+Recherche.propTypes = {
+  drinks: PropTypes.array,
+  favoris: PropTypes.array,
+  setFavoris: PropTypes.object,
+};
 
+Recherche.defaultProps = {
+  drinks: [],
+  favoris: PropTypes.array,
+};
 export default Recherche;
