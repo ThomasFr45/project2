@@ -2,7 +2,7 @@
 
 nav {
   margin-top: 0;
-  background-color: #dd6802;
+  background-color: rgb(161, 1, 1);
   border-bottom: 2px solid;
 }
 
@@ -29,8 +29,12 @@ a:link {
 a:hover {
   color: blue;
 }
-a {
-  color:black;
+nav a {
+  color:white;
+}
+
+a{
+  color: black;
 }
 
 /* End Navbar CSS */
