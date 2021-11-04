@@ -51,13 +51,14 @@ img {
 }
 
 .home-article {
-  background-color: rgb(204, 185, 185);
+  background-color: rgba(42, 0, 192, 0.13);
+  border-radius: 50px;
   display: flex;
   justify-content: space-around;
   padding: 10px;
   height: 250px;
   width: 80%;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   margin-top: 50px;
 }
 

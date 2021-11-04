@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Ingredients = ({ data }) => {
+const Ingredients = ({ ingr }) => {
   const ingredients = []
   for (let i = 17; i <= 31; i++) {
-    if (data[i] !== '' && data[i] !== null) {
-      ingredients.push(data[i])
+    if (ingr[i] !== '' && ingr[i] !== null) {
+      ingredients.push(ingr[i])
     }
   }
   return (
@@ -22,11 +22,11 @@ const Ingredients = ({ data }) => {
   )
 }
 
-const Dosage = ({ data }) => {
+const Dosage = ({ dose }) => {
   const dosage = []
   for (let i = 32; i <= 46; i++) {
-    if (data[i] !== '' && data[i] !== null) {
-      dosage.push(data[i])
+    if (dose[i] !== '' && dose[i] !== null) {
+      dosage.push(dose[i])
     }
   }
   return (
@@ -62,8 +62,8 @@ const Details = () => {
         <img src={data[16]} alt="" />
       </div>
       <div className='details-comp'>
-        <Ingredients ingredient={data} />
-        <Dosage data={data} />
+        <Ingredients ingr={data} />
+        <Dosage dose={data} />
       </div>
       <div className='details-text'>
         <p>Glass Used : {data[8]}</p>
@@ -84,19 +84,19 @@ Details.defaultProps = {
 };
 
 Ingredients.propTypes = {
-  data: PropTypes.array,
+  ingr: PropTypes.array,
 };
 
 Ingredients.defaultProps = {
-  data: [],
+  ingr: [],
 };
 
 Dosage.propTypes = {
-  data: PropTypes.array,
+  dose: PropTypes.array,
 };
 
 Dosage.defaultProps = {
-  data: [],
+  dose: [],
 };
 
 export default Details
