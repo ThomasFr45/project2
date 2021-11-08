@@ -15,9 +15,13 @@ import Details from './components/Home/Details.jsx'
 const App = () => {
   const [isLoaded, setIsLoaded] = React.useState(false)
   const [data, setData] = React.useState([])
-  const [favoris, setFavoris] = React.useState([]);
+  const [favoris, setFavoris] = React.useState(["test"]);
   const [drinks, setDrinks] = React.useState([]);
+  useEffect(() => {
+    setFavoris(localStorage.getItem("fav"));
+  }, [])
 
+  favoris? console.log("It exists") : setFavoris([]);
   useEffect(() => {
     const url =
       'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail'

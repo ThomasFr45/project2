@@ -61,8 +61,7 @@ a{
 
 footer {
   background: linear-gradient(#e97a19, #dd3535);
-  padding-top: 0.3em;
-  padding-left: 1.2em;
+  padding: 1.5rem 0 1.5rem 0;
   position: absolute;
   bottom: -1;
   left: 0;

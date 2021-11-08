@@ -17,7 +17,7 @@ const Recherche = ({ drinks, favoris, setFavoris }) => {
 Recherche.propTypes = {
   drinks: PropTypes.array,
   favoris: PropTypes.array,
-  setFavoris: PropTypes.object,
+  setFavoris: PropTypes.func,
 };
 
 Recherche.defaultProps = {

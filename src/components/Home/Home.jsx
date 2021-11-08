@@ -24,7 +24,7 @@ const Home = ({ data, favoris, setFavoris  }) => {
 Home.propTypes = {
   data: PropTypes.array,
   favoris: PropTypes.array,
-  setFavoris: PropTypes.object,
+  setFavoris: PropTypes.func,
 };
 
 Home.defaultProps = {

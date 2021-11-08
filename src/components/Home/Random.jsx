@@ -10,7 +10,6 @@ const Random = ({ item, favoris, setFavoris }) => {
     setObj(Math.floor(Math.random() * item[0].length));
     setButtonText('Encore !');
   };
-  console.log(item[0])
   return (
     <div className="random-div">
       <div className="random-item">
