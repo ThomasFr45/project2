@@ -33,7 +33,7 @@ function Search({ drinks, favoris, setFavoris }) {
 Search.propTypes = {
   drinks: PropTypes.array,
   favoris: PropTypes.array,
-  setFavoris: PropTypes.object,
+  setFavoris: PropTypes.func,
 };
 
 Search.defaultProps = {

@@ -43,7 +43,7 @@ Categories.propTypes = {
   title: PropTypes.string,
   item: PropTypes.array,
   favoris: PropTypes.array,
-  setFavoris: PropTypes.object,
+  setFavoris: PropTypes.func,
 };
 
 Categories.defaultProps = {

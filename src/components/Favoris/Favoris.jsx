@@ -3,12 +3,12 @@ import Footer from '../Footer';
 import FavList from './FavList';
 import PropTypes from 'prop-types'
 
-const Favoris = ({ favoris }) => {
+const Favoris = ({ favoris, setFavoris }) => {
   return (
     <div className='page-container'>
       <div className='content-wrap'>
         <Banniere title="Retrouvez vos cocktails favoris ici !"/>
-        <FavList favoris={favoris}/>
+        <FavList favoris={favoris} setFavoris={setFavoris}/>
       </div>
       <Footer />
     </div>
@@ -17,6 +17,7 @@ const Favoris = ({ favoris }) => {
 
 Favoris.propTypes = {
   favoris: PropTypes.array,
+  setFavoris: PropTypes.func,
 };
 
 Favoris.defaultProps = {

@@ -15,13 +15,16 @@ import Details from './components/Home/Details.jsx'
 const App = () => {
   const [isLoaded, setIsLoaded] = React.useState(false)
   const [data, setData] = React.useState([])
-  const [favoris, setFavoris] = React.useState(["test"]);
+  const [favoris, setFavoris] = React.useState([]);
   const [drinks, setDrinks] = React.useState([]);
   useEffect(() => {
-    setFavoris(localStorage.getItem("fav"));
+    const temp = localStorage.getItem("fav").split(",");
+    setFavoris(temp.filter(item => item !== ""))
   }, [])
-
-  favoris? console.log("It exists") : setFavoris([]);
+  useEffect(() => {
+    localStorage.setItem("fav", favoris);
+  }, [favoris])
+  favoris ? null : setFavoris([]),
   useEffect(() => {
     const url =
       'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail'
@@ -77,7 +80,7 @@ const App = () => {
               <Home data={data} favoris={favoris} setFavoris={setFavoris}/>
             </Route>
             <Route exact path='/Favoris'>
-              <Favoris favoris={favoris}/>
+              <Favoris favoris={favoris} setFavoris={setFavoris}/>
             </Route>
             <Route exact path='/Recherche'>
               <Recherche drinks={drinks} favoris={favoris} setFavoris={setFavoris}/>

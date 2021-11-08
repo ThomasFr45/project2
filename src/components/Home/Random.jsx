@@ -36,7 +36,7 @@ const Random = ({ item, favoris, setFavoris }) => {
 Random.propTypes = {
   item: PropTypes.array,
   favoris: PropTypes.array,
-  setFavoris: PropTypes.object,
+  setFavoris: PropTypes.func,
 };
 
 Random.defaultProps = {

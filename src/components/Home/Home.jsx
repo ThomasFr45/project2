@@ -29,7 +29,7 @@ Home.propTypes = {
 
 Home.defaultProps = {
   data: [],
-  favoris: PropTypes.array,
+  favoris: [],
 };
 
 export default Home

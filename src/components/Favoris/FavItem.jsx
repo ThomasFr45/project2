@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 const FavItem = ({ favoris }) => {
-  console.log(favoris)
   const [isReady, setIsReady] = useState(false)
   const [data, setData] = useState([])
   useEffect(() => {
@@ -10,8 +9,9 @@ const FavItem = ({ favoris }) => {
       .then(response => response.json().then(response => {
         setData(Object.values(response.drinks[0]));
         setIsReady(true);
-      }))
+      }).catch((err) => console.error(err.message)))
   }, [favoris])
+
   if (isReady === false) return <p>Loading...</p>
   else {
     return (
@@ -25,10 +25,10 @@ const FavItem = ({ favoris }) => {
 }
 
 FavItem.propTypes = {
-  favoris: PropTypes.array,
+  favoris: PropTypes.string,
 };
 
 FavItem.defaultProps = {
-  favoris: [],
+  favoris: null,
 };
 export default FavItem

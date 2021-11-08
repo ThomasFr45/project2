@@ -35,14 +35,14 @@ const SearchResult = ({data, favoris, setFavoris, checkbox }) => {
 }
 
 SearchResult.propTypes = {
-  data: PropTypes.string,
+  data: PropTypes.array,
   checkbox: PropTypes.array,
   favoris: PropTypes.array,
-  setFavoris: PropTypes.object,
+  setFavoris: PropTypes.func,
 };
 
 SearchResult.defaultProps = {
-  data: '',
+  data: [],
   checkbox: [],
   favoris: PropTypes.array,
 };

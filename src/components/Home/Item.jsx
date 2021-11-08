@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Item = ({ name, img, id, favoris, setFavoris }) => {
   const handleFav = (id) => {
-    setFavoris([...favoris, id])
+    setFavoris([...favoris, id]);
   }
   const handleUnfav = (id) => {
     setFavoris(favoris.filter((item) => item !== id))
@@ -24,14 +24,14 @@ Item.propTypes = {
   img: PropTypes.string,
   name: PropTypes.string,
   favoris: PropTypes.array,
-  setFavoris: PropTypes.object,
+  setFavoris: PropTypes.func,
 };
 
 Item.defaultProps = {
   id: '',
   img: '',
   name: '',
-  favoris: PropTypes.array,
+  favoris: [],
 };
 
 export default Item;
