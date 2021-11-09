@@ -3,20 +3,17 @@ import PropTypes from 'prop-types';
 
 const FavList = ({ favoris, setFavoris }) => {
 
-  const handleUnfav = (id) => {
-    setFavoris(favoris.filter((item) => item !== id))
-  }
-
   if (!favoris[0]) return <h3>You might want to add something to your favorite</h3>
   else  {
     return (
-      <div className='favorite-list'>
-        {favoris.map((fav) => (
-          <div key={fav} className="fav-item">
-            <div className='isFavorite' onClick={() => handleUnfav(fav)}/>
-            <FavItem favoris={fav}/>
-          </div>
-        ))}
+      <div className="fav-body">
+        <div className='favorite-list'>
+          {favoris.map((fav) => (
+            <div key={fav}>
+              <FavItem fav={fav} favoris={favoris} setFavoris={setFavoris}/>
+            </div>
+          ))}
+        </div>
       </div>
     )
   }

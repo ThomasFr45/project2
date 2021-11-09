@@ -4,7 +4,7 @@ import Banniere from '../Banniere.jsx';
 import Footer from '../Footer.jsx';
 import PropTypes from 'prop-types'
 const Home = ({ data, favoris, setFavoris, drinks  }) => {
-  const alcool = ['Vodka', 'Gin', 'Whisky', 'Rhum', 'Autre']
+  const alcool = ['Vodka', 'Gin', 'Whisky', 'Rhum', 'Other']
   return (
     <div className='page-container'>
       <div className='content-wrap'>

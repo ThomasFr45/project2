@@ -1,3 +1,9 @@
+.fav-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .favorite-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -6,12 +12,17 @@
 }
 
 .fav-item {
-  background-color: rgba(42, 0, 192, 0.13);
+  background-color: #d1cccc;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+  border: 1px solid;
   border-radius: 50px;
   display: flex;
-  align-content: center;
   flex-direction: column;
-  min-width: 25%;
+  align-items: center;
+  padding: 10px;
+  height: 230px;
+  width: 250px;
+  margin-top: 40px;
 }
 
 .fav-text {
@@ -41,4 +52,44 @@
   height: 40px;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg");
   background-size: 100%;
+}
+
+@media (min-width:300px) and (max-width:500px) {
+  .fav-item {
+    width:220px;
+  }
+
+  .favorite-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width:501px) and (max-width:700px) {
+  .fav-item {
+    width: 200px;
+  }
+
+  .favorite-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width:700px) and (max-width: 800px) {
+  .fav-item {
+    width: 250px;
+  }
+
+  .favorite-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width:801px) and (max-width:999px) {
+  .fav-items {
+    width: 250px;
+  }
+
+  .favorite-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

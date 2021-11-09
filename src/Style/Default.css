@@ -3,13 +3,16 @@
 nav {
   margin-top: 0;
   /*background-color: rgb(161, 1, 1);*/
+  background-color: rgb(48, 47, 47);
   border-bottom: 2px solid;
 }
 
 nav ul {
   display: flex;
   justify-content: space-around;
-  margin: 0;
+  margin: 50px;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 nav li {
@@ -30,7 +33,7 @@ a:hover {
   color: blue;
 }
 nav a {
-  color:black;
+  color:white;
 }
 
 a{
@@ -44,9 +47,10 @@ a{
 /* Banniere CSS */
 
 .banniere {
-  /*background: linear-gradient(#dd3535, #f8943d);*/
+  background: linear-gradient(#ec4343, #f3a25c);
   height: 250px;
   margin: 0px;
+  border-bottom: 2px solid;
 }
 
 .banniere-h1 {
@@ -60,12 +64,13 @@ a{
 /* Footer CSS */
 
 footer {
-  /*background: linear-gradient(#e97a19, #dd3535);*/
+  background: linear-gradient(#f3a25c, #ec4343);
   padding: 1.5rem 0 1.5rem 0;
   position: absolute;
   bottom: -1;
   left: 0;
   right: 0;
+  border-top: 2px solid;
 }
 
 @media (min-width: 700px) {
@@ -75,7 +80,6 @@ footer {
 }
 
 .text-footer {
-  border-top: 2px solid;
   text-align: center;
   font-style: italic;
   font-size: 0.6em;
