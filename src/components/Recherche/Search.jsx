@@ -19,12 +19,15 @@ function Search({ drinks, favoris, setFavoris }) {
         placeholder="Type here..."
         onChange={(event) => setSearchValue(event.target.value)}
       />
-      <input type="checkbox" name="Sprite" onChange={() => handleCheck("Sprite")}/>
-      <label htmlFor="Sprite">Sprite</label>
-      <input type="checkbox" name="Soda Water" onChange={() => handleCheck("Soda Water")}/>
-      <label htmlFor="Soda Water">Soda Water</label>
-      <input type="checkbox" name="Orange Juice" onChange={() => handleCheck("Orange Juice")}/>
-      <label htmlFor="Orange Juice">Orange Juice</label>
+      <input type="checkbox" name="checkbox1" onChange={() => (
+        handleCheck("Lemon"),
+        handleCheck("lemon")
+      )}/>
+      <label htmlFor="checkbox1">Lemon</label>
+      <input type="checkbox" name="checkbox2" onChange={() => handleCheck("Soda Water")}/>
+      <label htmlFor="checkbox2">Soda Water</label>
+      <input type="checkbox" name="checkbox3" onChange={() => handleCheck("Orange Juice")}/>
+      <label htmlFor="checkbox3">Orange Juice</label>
       <SearchResult data={drinks.filter(drink => drink[1].includes(searchValue))} favoris={favoris} setFavoris={setFavoris} checkbox={checkedList}/>
     </div>
   );

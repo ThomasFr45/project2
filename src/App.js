@@ -19,7 +19,8 @@ const App = () => {
   const [drinks, setDrinks] = React.useState([]);
   useEffect(() => {
     const temp = localStorage.getItem("fav").split(",");
-    setFavoris(temp.filter(item => item !== ""))
+    if (temp === null) setFavoris([]);
+    else setFavoris(temp.filter(item => item !== ""))
   }, [])
   useEffect(() => {
     localStorage.setItem("fav", favoris);

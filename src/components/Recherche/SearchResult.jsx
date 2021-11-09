@@ -8,17 +8,19 @@ const SearchResult = ({data, favoris, setFavoris, checkbox }) => {
   const handleUnfav = (id) => {
     setFavoris(favoris.filter((item) => item !== id))
   }
-  let test = data;
-  checkbox.map(item => test = test.filter(drink => drink.includes(item)))
+  let filter = data;
+  checkbox.map(item => filter = filter.filter(drink => drink.includes(item)))
   return(
     <div className="search-listResult">
       {
-        checkbox[0] ? test.map((drink, idx) => (
+        checkbox[0] ? filter.map((drink, idx) => (
           <div key={idx} className="search-items">
-            <p>{drink[1]}</p>
-            <img src={drink[16]} alt="" />
-            <button className='fav-button'><Link to={`/${drink[0]}`} >Recipe</Link></button>
             {favoris.includes(drink[0]) ? <div className='isFavorite' onClick={() => handleUnfav(drink[0])}/> : <div className='notFavorite' onClick={() => handleFav(drink[0])}/>}
+            <>
+              <p>{drink[1]}</p>
+              <img src={drink[16]} alt="" />
+              <button className='fav-button'><Link to={`/${drink[0]}`} >Recipe</Link></button>
+            </>
           </div>
         ))
           : data.map((drink, idx) => (
