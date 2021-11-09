@@ -12,8 +12,8 @@ const FavList = ({ favoris, setFavoris }) => {
     return (
       <div className='favorite-list'>
         {favoris.map((fav) => (
-          <div key={fav} className="itemContent">
-            <button className='item-button' onClick={() => handleUnfav(fav)}>Unfav</button>
+          <div key={fav} className="fav-item">
+            <div className='isFavorite' onClick={() => handleUnfav(fav)}/>
             <FavItem favoris={fav}/>
           </div>
         ))}

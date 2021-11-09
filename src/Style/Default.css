@@ -2,7 +2,7 @@
 
 nav {
   margin-top: 0;
-  background-color: rgb(161, 1, 1);
+  /*background-color: rgb(161, 1, 1);*/
   border-bottom: 2px solid;
 }
 
@@ -30,7 +30,7 @@ a:hover {
   color: blue;
 }
 nav a {
-  color:white;
+  color:black;
 }
 
 a{
@@ -44,7 +44,7 @@ a{
 /* Banniere CSS */
 
 .banniere {
-  background: linear-gradient(#dd3535, #f8943d);
+  /*background: linear-gradient(#dd3535, #f8943d);*/
   height: 250px;
   margin: 0px;
 }
@@ -60,7 +60,7 @@ a{
 /* Footer CSS */
 
 footer {
-  background: linear-gradient(#e97a19, #dd3535);
+  /*background: linear-gradient(#e97a19, #dd3535);*/
   padding: 1.5rem 0 1.5rem 0;
   position: absolute;
   bottom: -1;
@@ -75,10 +75,11 @@ footer {
 }
 
 .text-footer {
+  border-top: 2px solid;
   text-align: center;
   font-style: italic;
   font-size: 0.6em;
-  color: white;
+  color: black;
   padding-bottom: 1em;
 }
 

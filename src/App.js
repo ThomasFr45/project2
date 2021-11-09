@@ -35,7 +35,6 @@ const App = () => {
     const whisky = []
     const rhum = []
     const rest = []
-    const allDrinks = []
     fetch(url).then(response =>
       response.json().then(data =>
         data.drinks.map(item =>
@@ -57,8 +56,7 @@ const App = () => {
               } else {
                 rest.push(drink)
               }
-              allDrinks.push(drink)
-              setDrinks(allDrinks);
+              setDrinks([...vodka, ...gin, ...whisky, ...rhum, ...rest]);
               setData([vodka, gin, whisky, rhum, rest]);
               setIsLoaded(true);
             })
@@ -67,7 +65,6 @@ const App = () => {
       )
     )
   }, [])
-
   if (!isLoaded) {
     return <div>Loading</div>
   } else {
@@ -77,7 +74,7 @@ const App = () => {
           <Navbar />
           <Switch>
             <Route exact path='/'>
-              <Home data={data} favoris={favoris} setFavoris={setFavoris}/>
+              <Home data={data} favoris={favoris} setFavoris={setFavoris} drinks={drinks}/>
             </Route>
             <Route exact path='/Favoris'>
               <Favoris favoris={favoris} setFavoris={setFavoris}/>

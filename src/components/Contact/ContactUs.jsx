@@ -1,28 +1,32 @@
-import { useState } from 'react';
+import emailjs from 'emailjs-com'
 const ContactUs = () => {
-  const [subject, setSubject] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMEssage] = useState('');
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    window.alert(`Subject ${subject} Email ${email} Message ${message}`)
-  }
+
+    emailjs.sendForm('service_0nkucvi', 'template_fyawrff', e.target, 'user_2q5ee1RYRTjglVbkWn7xs')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    e.target.reset();
+  };
   return (
     <div className="divContact">
-      <form action="">
+      <form onSubmit={sendEmail}>
         <div className="divInput">
-          <input type="text" className="texte" placeholder="What is it about?" value={subject} onChange={(e) => setSubject(e.target.value)}/>
+          <input type="text" className="texte" placeholder="What is it about?" name="subject"/>
 
         </div>
         <div className="divInput">
-          <input type="email" className="texte" placeholder="Type your email adress here." value={email} onChange={(e) => setEmail(e.target.value)}/>
+          <input type="email" className="texte" placeholder="Type your email adress here." name="email"/>
         </div>
         <div className="divMessage">
-          <textarea className="message" value={message} onChange={(e) => setMEssage(e.target.value)}></textarea>
+          <textarea className="message" name="message"></textarea>
         </div>
         <div className="divbutton">
-          <button type="submit" className="button" onClick={handleSubmit}>Envoyer</button>
+          <input type="submit" className='contact-button' value='Submit'></input>
         </div>
       </form>
     </div>);

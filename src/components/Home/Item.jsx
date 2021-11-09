@@ -11,10 +11,10 @@ const Item = ({ name, img, id, favoris, setFavoris }) => {
   }
   return (
     <div className="itemContent">
-      {favoris.includes(id) ? <button onClick={() => handleUnfav(id)}>Unfav</button> : <button onClick={() => handleFav(id)}>Fav</button>}
+      {favoris.includes(id) ? <div className="isFavorite" onClick={() => handleUnfav(id)}/> : <div className="notFavorite" onClick={() => handleFav(id)}/>}
       <h4 className="center">{name}</h4>
       <img src={img} alt="" className="center" />
-      <button className='item-button'><Link to={`/${id}`} >Voir la recette.</Link></button>
+      <button className='item-button'><Link to={`/${id}`} >Recipe</Link></button>
     </div>
   );
 };

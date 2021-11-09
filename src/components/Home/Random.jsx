@@ -4,26 +4,26 @@ import PropTypes from 'prop-types';
 
 const Random = ({ item, favoris, setFavoris }) => {
   const [obj, setObj] = useState('Plop');
-  const [buttonText, setButtonText] = useState('Cocktail aléatoire');
+  const [buttonText, setButtonText] = useState('Random Cocktail');
 
   const getRandom = () => {
-    setObj(Math.floor(Math.random() * item[0].length));
-    setButtonText('Encore !');
+    setObj(Math.floor(Math.random() * item.length));
+    setButtonText('Again !');
   };
   return (
     <div className="random-div">
       <div className="random-item">
         {obj !== 'Plop' ? (
           <Item
-            name={item[1][obj][1]}
-            img={item[1][obj][16]}
-            desc={item[1][obj][9]}
-            id={item[1][obj][0]}
+            name={item[obj][1]}
+            img={item[obj][16]}
+            desc={item[obj][9]}
+            id={item[obj][0]}
             favoris={favoris}
             setFavoris={setFavoris}
           />
         ) : (
-          <p>Vous vous sentez chanceux ? Clickez ici !</p>
+          <p>Feeling lucky ? Test your luck here !</p>
         )}
         <button className="random-button" onClick={getRandom}>
           {buttonText}

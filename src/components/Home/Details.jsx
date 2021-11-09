@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Banniere from '../Banniere';
+import Footer from '../Footer';
 
 const Ingredients = ({ ingr }) => {
   const ingredients = []
@@ -54,23 +56,29 @@ const Details = () => {
 
   if (data === []) return <p>Loading...</p>
   return (
-    <div className='details-content'>
-      <div className='details-text'>
-        <p>{data[1]}</p>
+    <div className='page-container'>
+      <div className='content-wrap'>
+        <Banniere title='Cocktail recipe'/>
+        <div className='details-content'>
+          <div className='details-text'>
+            <p>{data[1]}</p>
+          </div>
+          <div className='details-img'>
+            <img src={data[16]} alt="" />
+          </div>
+          <div className='details-comp'>
+            <Ingredients ingr={data} />
+            <Dosage dose={data} />
+          </div>
+          <div className='details-text'>
+            <p>Glass Used : {data[8]}</p>
+          </div>
+          <div className='details-text'>
+            <p>{data[9]}</p>
+          </div>
+        </div>
       </div>
-      <div className='details-img'>
-        <img src={data[16]} alt="" />
-      </div>
-      <div className='details-comp'>
-        <Ingredients ingr={data} />
-        <Dosage dose={data} />
-      </div>
-      <div className='details-text'>
-        <p>Glass Used : {data[8]}</p>
-      </div>
-      <div className='details-text'>
-        <p>{data[9]}</p>
-      </div>
+      <Footer />
     </div>
   )
 }

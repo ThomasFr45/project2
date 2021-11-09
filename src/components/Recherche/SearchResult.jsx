@@ -17,16 +17,18 @@ const SearchResult = ({data, favoris, setFavoris, checkbox }) => {
           <div key={idx} className="search-items">
             <p>{drink[1]}</p>
             <img src={drink[16]} alt="" />
-            <button className='fav-button'><Link to={`/${drink[0]}`} >Voir la recette.</Link></button>
-            {favoris.includes(drink[0]) ? <button onClick={() => handleUnfav(drink[0])}>Unfav</button> : <button onClick={() => handleFav(drink[0])}>Fav</button>}
+            <button className='fav-button'><Link to={`/${drink[0]}`} >Recipe</Link></button>
+            {favoris.includes(drink[0]) ? <div className='isFavorite' onClick={() => handleUnfav(drink[0])}/> : <div className='notFavorite' onClick={() => handleFav(drink[0])}/>}
           </div>
         ))
           : data.map((drink, idx) => (
             <div key={idx} className="search-items">
-              <p>{drink[1]}</p>
-              <img src={drink[16]} alt="" />
-              <button className='fav-button'><Link to={`/${drink[0]}`} >Voir la recette.</Link></button>
-              {favoris.includes(drink[0]) ? <button onClick={() => handleUnfav(drink[0])}>Unfav</button> : <button onClick={() => handleFav(drink[0])}>Fav</button>}
+              {favoris.includes(drink[0]) ? <div className='isFavorite' onClick={() => handleUnfav(drink[0])}/> : <div className='notFavorite' onClick={() => handleFav(drink[0])}/>}
+              <>
+                <p>{drink[1]}</p>
+                <img src={drink[16]} alt="" />
+                <button className='fav-button'><Link to={`/${drink[0]}`} >Recipe</Link></button>
+              </>
             </div>
           ))
       }

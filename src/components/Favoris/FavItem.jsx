@@ -15,11 +15,11 @@ const FavItem = ({ favoris }) => {
   if (isReady === false) return <p>Loading...</p>
   else {
     return (
-      <div className='fav-item'>
+      <>
         <p className='fav-text'>{data[1]}</p>
         <img className='fav-img' src={data[16]} alt="" />
-        <button className='fav-button'><Link to={`/${data[0]}`} >Voir la recette.</Link></button>
-      </div>
+        <button className='fav-button'><Link to={`/${data[0]}`} >Recipe</Link></button>
+      </>
     )
   }
 }
