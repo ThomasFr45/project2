@@ -28,8 +28,9 @@ const SearchResult = ({data, favoris, setFavoris, checkbox }) => {
               {favoris.includes(drink[0]) ? <div className='isFavorite' onClick={() => handleUnfav(drink[0])}/> : <div className='notFavorite' onClick={() => handleFav(drink[0])}/>}
               <>
                 <p>{drink[1]}</p>
-                <img src={drink[16]} alt="" />
-                <button className='fav-button'><Link to={`/${drink[0]}`} >Recipe</Link></button>
+                <Link to={`/${drink[0]}`} >
+                  <img src={drink[16]} alt="" />
+                </Link>
               </>
             </div>
           ))

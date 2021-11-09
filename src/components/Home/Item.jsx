@@ -13,8 +13,9 @@ const Item = ({ name, img, id, favoris, setFavoris }) => {
     <div className="itemContent">
       {favoris.includes(id) ? <div className="isFavorite" onClick={() => handleUnfav(id)}/> : <div className="notFavorite" onClick={() => handleFav(id)}/>}
       <h4 className="center">{name}</h4>
-      <img src={img} alt="" className="center" />
-      <button className='item-button'><Link to={`/${id}`} >Recipe</Link></button>
+      <Link to={`/${id}`} >
+        <img src={img} alt="" className="center" />
+      </Link>
     </div>
   );
 };
