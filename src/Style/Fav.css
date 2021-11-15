@@ -12,8 +12,8 @@
 }
 
 .fav-item {
-  background-color: #d1cccc;
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+  background-color: #faefc6;
+  box-shadow: 8px 8px 2px 1px rgba(249, 85, 53, 0.3);
   border: 1px solid;
   border-radius: 50px;
   display: flex;

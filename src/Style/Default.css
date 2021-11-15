@@ -2,9 +2,8 @@
 
 nav {
   margin-top: 0;
-  /*background-color: rgb(161, 1, 1);*/
-  background-color: rgb(48, 47, 47);
-  border-bottom: 2px solid;
+  background-color: #faefc6;
+  border-bottom: 2px solid #0d3765;
 }
 
 nav ul {
@@ -30,10 +29,10 @@ a:link {
   text-decoration: none;
 }
 a:hover {
-  color: blue;
+  color: #0d3765;
 }
 nav a {
-  color:white;
+  color: #f95535;
 }
 
 a{
@@ -47,15 +46,15 @@ a{
 /* Banniere CSS */
 
 .banniere {
-  background: linear-gradient(#ec4343, #f3a25c);
+  background: linear-gradient(#f95535, #ee9548, #f4d35b);
   height: 250px;
   margin: 0px;
-  border-bottom: 2px solid;
 }
 
 .banniere-h1 {
   margin-top: 0px;
   padding-top: 90px;
+  color: #0d3765;
 }
 
 /* End of Banniere CSS */
@@ -64,7 +63,7 @@ a{
 /* Footer CSS */
 
 footer {
-  background: linear-gradient(#f3a25c, #ec4343);
+  background: linear-gradient(#faefc6, #f4d35b, #ee9548, #f95535);
   padding: 1.5rem 0 1.5rem 0;
   position: absolute;
   bottom: -1;
@@ -83,7 +82,7 @@ footer {
   text-align: center;
   font-style: italic;
   font-size: 0.6em;
-  color: black;
+  color: #0d3765;
   padding-bottom: 1em;
 }
 
