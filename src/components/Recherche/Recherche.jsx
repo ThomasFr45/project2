@@ -21,6 +21,7 @@ Recherche.propTypes = {
   drinks: PropTypes.array,
   favoris: PropTypes.array,
   setFavoris: PropTypes.func,
+  allDrinks: PropTypes.array,
 };
 
 Recherche.defaultProps = {

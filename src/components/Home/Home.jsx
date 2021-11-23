@@ -38,6 +38,8 @@ const Home = ({ data, allDrinks, favoris, setFavoris }) => {
 
 Home.propTypes = {
   data: PropTypes.array,
+  favoris: PropTypes.array,
+  setFavoris: PropTypes.func,
 };
 
 Home.defaultProps = {

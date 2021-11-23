@@ -32,13 +32,13 @@ const Random = ({ allDrinks, favoris, setFavoris }) => {
   );
 };
 
-Item.propTypes = {
+Random.propTypes = {
   allDrinks: PropTypes.array,
   favoris: PropTypes.array,
   setFavoris: PropTypes.func,
 };
 
-Item.defaultProps = {
+Random.defaultProps = {
   allDrinks: [],
   favoris: [],
 };

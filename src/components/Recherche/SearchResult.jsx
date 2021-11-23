@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const SearchResult = ({ data, favoris, setFavoris, checkedList }) => {
   const handleFav = (id) => {
@@ -41,6 +42,19 @@ const SearchResult = ({ data, favoris, setFavoris, checkedList }) => {
       ))}
     </div>
   );
+};
+
+SearchResult.propTypes = {
+  drinks: PropTypes.array,
+  favoris: PropTypes.array,
+  setFavoris: PropTypes.func,
+  data: PropTypes.array,
+  checkedList: PropTypes.array,
+};
+
+SearchResult.defaultProps = {
+  drinks: [],
+  favoris: PropTypes.array,
 };
 
 export default SearchResult;
