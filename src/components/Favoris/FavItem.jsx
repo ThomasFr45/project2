@@ -1,43 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-const FavItem = ({ fav, favoris, setFavoris }) => {
-  const [isReady, setIsReady] = useState(false)
-  const [data, setData] = useState([])
+const FavItem = ({ item, favoris, setFavoris }) => {
+  const [data, setData] = useState([]);
+  const [ready, setReady] = useState(false);
   useEffect(() => {
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${fav}`)
-      .then(response => response.json().then(response => {
+    fetch(
+      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${item}`
+    ).then((response) =>
+      response.json().then((response) => {
         setData(Object.values(response.drinks[0]));
-        setIsReady(true);
-      }).catch((err) => console.error(err.message)))
-  }, [favoris])
+        setReady(true);
+      })
+    );
+  }, [item]);
+
   const handleUnfav = (id) => {
-    setFavoris(favoris.filter((item) => item !== id))
-  }
-  if (isReady === false) return <p>Loading...</p>
+    setFavoris(favoris.filter((item) => item !== id));
+  };
+
+  if (ready === false) return <p>Loading...</p>;
   else {
     return (
       <div className="fav-item">
-        <div className='isFavorite' onClick={() => handleUnfav(fav)}/>
-        <>
-          <p className='fav-text'>{data[1]}</p>
-          <Link to={`/${data[0]}`} >
-            <img className='fav-img' src={data[16]} alt="" />
-          </Link>
-        </>
+        <div
+          className="isFavorite"
+          role="button"
+          onClick={() => handleUnfav(item)}
+          tabIndex={0}
+          aria-hidden="true"
+        />
+        <p className="fav-text">{data[1]}</p>
+        <Link to={`/${data[0]}`}>
+          <img className="fav-img" src={data[16]} alt="cocktail" />
+        </Link>
       </div>
-    )
+    );
   }
-}
+};
 
 FavItem.propTypes = {
   favoris: PropTypes.array,
-  fav: PropTypes.string,
+  item: PropTypes.array,
   setFavoris: PropTypes.func,
-};
+}
 
-FavItem.defaultProps = {
-  fav: null,
-  favoris: [],
-};
-export default FavItem
+export default FavItem;

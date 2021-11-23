@@ -3,17 +3,17 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer>
-      <div className="text-footer">
+      <h2>Let&apos;s talk cocktails</h2>
+
+      <div>
         <p>
-          Wilders ayant participé à l&apos;élaboration de ce projet
+          Web site made by wilders while following the WildCodeSchool course.
           <br />
-          Site internet créé dans le cadre d&apos;un projet de la formation
-          DEVELOPPEUR WEB et WEB MOBILE promo 2021-2022
+          All rights reserved to the WildCodeSchool
           <br />
-          Tous droits réservés à la WildCodeSchool
+          2021 - 2022
         </p>
       </div>
-      <div />
     </footer>
   );
 };

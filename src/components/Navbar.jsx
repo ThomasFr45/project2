@@ -9,16 +9,16 @@ const Navbar = () => {
           <Link to="/">Cocktails</Link>
         </li>
         <li>
-          <Link to="/Favoris">Favoris</Link>
+          <Link to="/favoris">Favorites</Link>
         </li>
         <li>
-          <img src="https://i.imgur.com/ivFXOin.png" alt="" />
+          <img src="https://i.imgur.com/ivFXOin.png" alt="logo" />
         </li>
         <li>
-          <Link to="/Recherche">Recherche</Link>
+          <Link to="/recherche">Search</Link>
         </li>
         <li>
-          <Link to="/Contact">Contact</Link>
+          <Link to="/contact">Contact</Link>
         </li>
       </ul>
     </nav>

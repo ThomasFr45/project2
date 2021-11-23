@@ -1,37 +1,46 @@
-import Categories from './Categories.jsx';
-import Random from './Random.jsx';
-import Banniere from '../Banniere.jsx';
-import Footer from '../Footer.jsx';
-import PropTypes from 'prop-types'
-const Home = ({ data, favoris, setFavoris, drinks  }) => {
-  const alcool = ['Vodka', 'Gin', 'Whisky', 'Rhum', 'Other']
+import React from 'react';
+import Categories from './Categories';
+import PropTypes from 'prop-types';
+import Banniere from '../Banniere';
+import Footer from '../Footer';
+import Random from './Random';
+import Navbar from '../Navbar';
+
+const Home = ({ data, allDrinks, favoris, setFavoris }) => {
+  const alcools = ['Vodka', 'Gin', 'Whisky', 'Rhum', 'Other'];
   return (
-    <div className='page-container'>
-      <div className='content-wrap'>
-        <Banniere title="Une envie de cocktail ? Vous êtes au bon endroit !"/>
-        <div className='home-articles'>
-          {alcool.map((alcool, index) => (
-            <Categories key={alcool} item={data[index]} title={alcool} favoris={favoris} setFavoris={setFavoris}/>
+    <div className="page-container">
+      <div className="content-wrap">
+        <Banniere title="Looking for a cocktail ? Here are some samples." />
+        <div className="home-articles">
+          {alcools.map((alcool, idx) => (
+            <Categories
+              key={alcool}
+              title={alcool}
+              item={data[idx]}
+              favoris={favoris}
+              setFavoris={setFavoris}
+              fa
+            />
           ))}
         </div>
-        <Random item={drinks} favoris={favoris} setFavoris={setFavoris} />
+        <Random
+          allDrinks={allDrinks}
+          favoris={favoris}
+          setFavoris={setFavoris}
+        />
       </div>
+      <Navbar />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 Home.propTypes = {
   data: PropTypes.array,
-  favoris: PropTypes.array,
-  setFavoris: PropTypes.func,
-  drinks: PropTypes.array,
 };
 
 Home.defaultProps = {
   data: [],
-  favoris: [],
-  drinks: [],
 };
-
-export default Home
+export default Home;

@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Banniere = ({title}) => {
+const Banniere = ({ title }) => {
   return (
     <div className="banniere">
-      <h1 className="banniere-h1">
-        {title}
-      </h1>
+      <h1 className="banniere-h1">{title}</h1>
     </div>
   );
 };
@@ -16,6 +14,6 @@ Banniere.propTypes = {
 };
 
 Banniere.defaultProps = {
-  title: 'title',
+  title: 'john',
 };
 export default Banniere;

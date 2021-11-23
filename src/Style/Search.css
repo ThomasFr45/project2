@@ -38,9 +38,9 @@
   margin-bottom: 10px;
 }
 
-@media (min-width:300px) and (max-width:500px) {
+@media (min-width: 300px) and (max-width: 500px) {
   .search-items {
-    width:220px;
+    width: 220px;
   }
 
   .search-listResult {
@@ -48,11 +48,11 @@
   }
 
   .search-checkbox-area {
-    grid-template-columns : repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width:501px) and (max-width:700px) {
+@media (min-width: 501px) and (max-width: 700px) {
   .search-items {
     width: 200px;
   }
@@ -62,11 +62,11 @@
   }
 
   .search-checkbox-area {
-    grid-template-columns : repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width:700px) and (max-width: 800px) {
+@media (min-width: 700px) and (max-width: 800px) {
   .search-items {
     width: 250px;
   }
@@ -76,11 +76,11 @@
   }
 
   .search-checkbox-area {
-    grid-template-columns : repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width:801px) and (max-width:999px) {
+@media (min-width: 801px) and (max-width: 999px) {
   .search-items {
     width: 250px;
   }
@@ -90,6 +90,6 @@
   }
 
   .search-checkbox-area {
-    grid-template-columns : repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }

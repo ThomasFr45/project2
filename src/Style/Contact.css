@@ -24,13 +24,12 @@
   width: 70px;
   margin-left: 48%;
   margin-bottom: 2%;
-  background-color: #0d3765;
+  background-color: #ffac64;
   box-shadow: none;
-  border-radius: 40px;
-  color: white;
+  border-radius: 15px;
+  color: #0d3765;
   font-weight: bold;
 }
-
 
 .texte {
   height: 20px;

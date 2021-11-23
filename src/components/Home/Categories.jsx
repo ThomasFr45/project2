@@ -1,55 +1,54 @@
-import React, { useState } from 'react';
-import Item from './Item.jsx';
 import PropTypes from 'prop-types';
-
-const Categories = (props) => {
+import Item from './Item';
+import { useState } from 'react';
+const Categories = ({ title, item, favoris, setFavoris }) => {
   const [index, setIndex] = useState(0);
-  function next() {
-    if (index >= props.item.length - 1) {
+  const next = () => {
+    if (index >= item.length - 1) {
       setIndex(0);
       return 0;
     }
     setIndex(index + 1);
-  }
-  function previous() {
+  };
+
+  const previous = () => {
     if (index <= 0) {
-      setIndex(props.item.length - 1);
+      setIndex(item.length - 1);
       return 0;
     }
     setIndex(index - 1);
-  }
+  };
+
   return (
-    <div className="home-article">
-      <h1>{`${props.title} Cocktails`}</h1>
-      <div className="item">
-        <button className="arrow-left" onClick={previous}></button>
-        {props.item[0] ? (
-          <Item
-            name={props.item[index][1]}
-            img={props.item[index][16]}
-            desc={props.item[index][9]}
-            id={props.item[index][0]}
-            favoris={props.favoris}
-            setFavoris={props.setFavoris}
-          />
-        ) : null}
-        <button className="arrow-right" onClick={next}></button>
+    <>
+      <div className="home-article">
+        <h1 className="article-name">{`${title} Cocktails`}</h1>
+        <div className="item">
+          <button className="arrow-left" onClick={previous}></button>
+          {item[0] ? (
+            <Item
+              name={item[index][1]}
+              img={item[index][16]}
+              id={item[index][0]}
+              favoris={favoris}
+              setFavoris={setFavoris}
+            />
+          ) : null}
+          <button className="arrow-right" onClick={next}></button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
 Categories.propTypes = {
   title: PropTypes.string,
   item: PropTypes.array,
-  favoris: PropTypes.array,
-  setFavoris: PropTypes.func,
 };
 
 Categories.defaultProps = {
   title: 'title',
   item: [],
-  favoris: [],
 };
 
 export default Categories;

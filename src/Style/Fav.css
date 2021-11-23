@@ -54,9 +54,9 @@
   background-size: 100%;
 }
 
-@media (min-width:300px) and (max-width:500px) {
+@media (min-width: 300px) and (max-width: 500px) {
   .fav-item {
-    width:220px;
+    width: 220px;
   }
 
   .favorite-list {
@@ -64,7 +64,7 @@
   }
 }
 
-@media (min-width:501px) and (max-width:700px) {
+@media (min-width: 501px) and (max-width: 700px) {
   .fav-item {
     width: 200px;
   }
@@ -74,7 +74,7 @@
   }
 }
 
-@media (min-width:700px) and (max-width: 800px) {
+@media (min-width: 700px) and (max-width: 800px) {
   .fav-item {
     width: 250px;
   }
@@ -84,7 +84,7 @@
   }
 }
 
-@media (min-width:801px) and (max-width:999px) {
+@media (min-width: 801px) and (max-width: 999px) {
   .fav-items {
     width: 250px;
   }

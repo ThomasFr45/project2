@@ -1,31 +1,30 @@
 import React, { useState } from 'react';
-import Item from './Item.jsx';
+import Item from './Item';
 import PropTypes from 'prop-types';
+const Random = ({ allDrinks, favoris, setFavoris }) => {
+  const [cocktailIndex, setCocktailIndex] = useState('');
+  const [buttonText, setButtonText] = useState(`Click Here !`);
 
-const Random = ({ item, favoris, setFavoris }) => {
-  const [obj, setObj] = useState('Plop');
-  const [buttonText, setButtonText] = useState('Random Cocktail');
-
-  const getRandom = () => {
-    setObj(Math.floor(Math.random() * item.length));
-    setButtonText('Again !');
+  const getRandomCocktail = () => {
+    setCocktailIndex(Math.floor(Math.random() * allDrinks.length));
+    setButtonText(`Again`);
   };
+
   return (
     <div className="random-div">
       <div className="random-item">
-        {obj !== 'Plop' ? (
+        {cocktailIndex !== '' ? (
           <Item
-            name={item[obj][1]}
-            img={item[obj][16]}
-            desc={item[obj][9]}
-            id={item[obj][0]}
+            name={allDrinks[cocktailIndex][1]}
+            img={allDrinks[cocktailIndex][16]}
+            id={allDrinks[cocktailIndex][0]}
             favoris={favoris}
             setFavoris={setFavoris}
           />
         ) : (
-          <p>Feeling lucky ? Test your luck here !</p>
+          <h4>Feeling lucky ? Try your luck !</h4>
         )}
-        <button className="random-button" onClick={getRandom}>
+        <button className="random-button" onClick={getRandomCocktail}>
           {buttonText}
         </button>
       </div>
@@ -33,15 +32,15 @@ const Random = ({ item, favoris, setFavoris }) => {
   );
 };
 
-Random.propTypes = {
-  item: PropTypes.array,
+Item.propTypes = {
+  allDrinks: PropTypes.array,
   favoris: PropTypes.array,
   setFavoris: PropTypes.func,
 };
 
-Random.defaultProps = {
-  item: [],
-  favoris: PropTypes.array,
+Item.defaultProps = {
+  allDrinks: [],
+  favoris: [],
 };
 
 export default Random;
