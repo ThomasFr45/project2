@@ -40,6 +40,7 @@ Home.propTypes = {
   data: PropTypes.array,
   favoris: PropTypes.array,
   setFavoris: PropTypes.func,
+  allDrinks: PropTypes.array,
 };
 
 Home.defaultProps = {

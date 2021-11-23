@@ -44,9 +44,12 @@ const Categories = ({ title, item, favoris, setFavoris }) => {
 Categories.propTypes = {
   title: PropTypes.string,
   item: PropTypes.array,
+  favoris: PropTypes.array,
+  setFavoris: PropTypes.func,
 };
 
 Categories.defaultProps = {
+  favoris: [],
   title: 'title',
   item: [],
 };
